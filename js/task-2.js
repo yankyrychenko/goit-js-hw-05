@@ -1,25 +1,27 @@
-// Write code under this line
 class User {
-  constructor(name, age, followers) {
-    this.name = name;
-    this.age = age;
-    this.followers = followers;
+  constructor(obj) {
+    this.name = obj.name;
+    this.age = obj.age;
+    this.followers = obj.followers;
   }
+
   getInfo() {
-    return `User ${this.name} is ${this.age} years old and has ${this.followers} followers`;
+    console.log(
+      `User ${this.name} is ${this.age} years old and has ${this.followers} followers`,
+    );
   }
 }
 
-console.log(typeof User);
-// 'function'
+const mango = new User({
+  name: 'Mango',
+  age: 2,
+  followers: 20,
+});
+mango.getInfo();
 
-const mango = new User("Mango", 2, 20);
-console.log(mango.getInfo());
-// 'User Mango is 2 years old and has 20 followers'
-
-console.log(typeof mango.getInfo);
-// 'function'
-
-const poly = new User("Poly", 3, 17);
-console.log(poly.getInfo());
-// 'User Poly is 3 years old and has 17 followers'
+const poly = new User({
+  name: 'Poly',
+  age: 3,
+  followers: 17,
+});
+poly.getInfo();
